@@ -1833,7 +1833,7 @@
               "if(is200Response){",
               "    var responseJSON = JSON.parse(responseBody);",
               "    ",
-              "    tests['Response contains \"title\" property'] = responseJSON.hasOwnProperty('tags');",
+              "    tests['Response contains \"title\" property'] = responseJSON.hasOwnProperty('title');",
               "    tests['\"title\" property returned as array'] = Array.isArray(responseJSON.title);",
               "}",
               ""
