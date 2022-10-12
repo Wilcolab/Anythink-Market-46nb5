@@ -1817,6 +1817,53 @@
       ]
     },
     {
+      "name": "Title",
+      "description": "",
+      "item": [{
+        "name": "All Title",
+        "event": [{
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var is200Response = responseCode.code === 200;",
+              "",
+              "tests['Response code is 200 OK'] = is200Response;",
+              "",
+              "if(is200Response){",
+              "    var responseJSON = JSON.parse(responseBody);",
+              "    ",
+              "    tests['Response contains \"title\" property'] = responseJSON.hasOwnProperty('tags');",
+              "    tests['\"title\" property returned as array'] = Array.isArray(responseJSON.title);",
+              "}",
+              ""
+            ]
+          }
+        }],
+        "request": {
+          "url": "{{apiUrl}}/title",
+          "method": "GET",
+          "header": [{
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": ""
+            },
+            {
+              "key": "X-Requested-With",
+              "value": "XMLHttpRequest",
+              "description": ""
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": ""
+          },
+          "description": ""
+        },
+        "response": []
+      }]
+    },
+    {
       "name": "Tags",
       "description": "",
       "item": [{
